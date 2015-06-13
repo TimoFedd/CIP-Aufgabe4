@@ -32,6 +32,7 @@ public class Main {
 		DSLParser parser = new DSLParser(tokens);
 		DSLParser.riddle_return result = parser.riddle();
 		Tree t = (Tree) result.getTree();
+		
 		System.out.println("nach dem parsen");
 		System.out.println(t.toStringTree());
 
@@ -40,10 +41,11 @@ public class Main {
 		DSLWalker normalizer = new DSLWalker(nodes);
 		DSLWalker.riddle_return ast2 = normalizer.riddle();
 		CommonTree r2 = ((CommonTree) ast2.tree);
+		
 		System.out.println("\n\nnach dem normalisieren");
 		System.out.println(r2.toStringTree());
 
-
+/*
 		CommonTreeNodeStream nodes2 = new CommonTreeNodeStream(r2);
 		nodes2.setTokenStream(tokens);
 		SymbolraetselEmitter emitter = new SymbolraetselEmitter(nodes2);
@@ -59,7 +61,7 @@ public class Main {
 		System.out.println("\n\nausgabe");
 		System.out.println(output);
 
-
+*/
 
 	}
 

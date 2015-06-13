@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g 2015-06-13 12:26:58
+// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g 2015-06-13 21:45:01
 package output;
 
 import org.antlr.runtime.*;
@@ -11,17 +11,18 @@ import java.util.ArrayList;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class DSLWalker extends TreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ADD", "BLOCK", "EQUAL", "RESULT", "SUB", "SYMBOL", "WS"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ADD", "BLOCK", "EQUAL", "PUZZLE", "RESULT", "SUB", "SYMBOL", "WS"
     };
 
     public static final int EOF=-1;
     public static final int ADD=4;
     public static final int BLOCK=5;
     public static final int EQUAL=6;
-    public static final int RESULT=7;
-    public static final int SUB=8;
-    public static final int SYMBOL=9;
-    public static final int WS=10;
+    public static final int PUZZLE=7;
+    public static final int RESULT=8;
+    public static final int SUB=9;
+    public static final int SYMBOL=10;
+    public static final int WS=11;
 
     // delegates
     public TreeParser[] getDelegates() {
@@ -47,7 +48,7 @@ public TreeAdaptor getTreeAdaptor() {
     return adaptor;
 }
     public String[] getTokenNames() { return DSLWalker.tokenNames; }
-    public String getGrammarFileName() { return "C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g"; }
 
 
     public static class riddle_return extends TreeRuleReturnScope {
@@ -57,7 +58,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "riddle"
-    // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:19:1: riddle : exercise exercise exercise exercise exercise exercise ;
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:19:1: riddle : exercise exercise exercise exercise exercise exercise ;
     public final DSLWalker.riddle_return riddle() throws RecognitionException {
         DSLWalker.riddle_return retval = new DSLWalker.riddle_return();
         retval.start = input.LT(1);
@@ -83,8 +84,8 @@ public TreeAdaptor getTreeAdaptor() {
 
 
         try {
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:19:8: ( exercise exercise exercise exercise exercise exercise )
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:19:10: exercise exercise exercise exercise exercise exercise
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:19:8: ( exercise exercise exercise exercise exercise exercise )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:19:10: exercise exercise exercise exercise exercise exercise
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -168,7 +169,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "exercise"
-    // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:20:1: exercise : ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) );
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:20:1: exercise : ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) );
     public final DSLWalker.exercise_return exercise() throws RecognitionException {
         DSLWalker.exercise_return retval = new DSLWalker.exercise_return();
         retval.start = input.LT(1);
@@ -204,7 +205,7 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleNodeStream stream_EQUAL=new RewriteRuleNodeStream(adaptor,"token EQUAL");
         RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
         try {
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:20:10: ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:20:10: ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -245,7 +246,7 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt1) {
                 case 1 :
-                    // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:20:17: ^( EQUAL ^( ADD block block ) block )
+                    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:20:17: ^( EQUAL ^( ADD block block ) block )
                     {
                     root_0 = (CommonTree)adaptor.nil();
 
@@ -320,7 +321,7 @@ public TreeAdaptor getTreeAdaptor() {
                     }
                     break;
                 case 2 :
-                    // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:21:19: ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block )
+                    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:21:19: ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block )
                     {
                     _last = (CommonTree)input.LT(1);
                     {
@@ -381,7 +382,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     // AST REWRITE
-                    // elements: bl2, bl3, EQUAL, bl1
+                    // elements: bl1, bl2, bl3, EQUAL
                     // token labels: 
                     // rule labels: bl1, bl3, bl2, retval
                     // token list labels: 
@@ -396,14 +397,14 @@ public TreeAdaptor getTreeAdaptor() {
                     root_0 = (CommonTree)adaptor.nil();
                     // 21:65: -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
                     {
-                        // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:21:68: ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
+                        // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:21:68: ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
                         stream_EQUAL.nextNode()
                         , root_1);
 
-                        // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:21:76: ^( ADD[\"+\"] $bl3 $bl2)
+                        // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:21:76: ^( ADD[\"+\"] $bl3 $bl2)
                         {
                         CommonTree root_2 = (CommonTree)adaptor.nil();
                         root_2 = (CommonTree)adaptor.becomeRoot(
@@ -454,7 +455,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "block"
-    // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:23:1: block : ^( BLOCK ( SYMBOL )+ ) ;
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:23:1: block : ^( BLOCK ( SYMBOL )+ ) ;
     public final DSLWalker.block_return block() throws RecognitionException {
         DSLWalker.block_return retval = new DSLWalker.block_return();
         retval.start = input.LT(1);
@@ -472,8 +473,8 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree SYMBOL15_tree=null;
 
         try {
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:23:7: ( ^( BLOCK ( SYMBOL )+ ) )
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:23:9: ^( BLOCK ( SYMBOL )+ )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:23:7: ( ^( BLOCK ( SYMBOL )+ ) )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:23:9: ^( BLOCK ( SYMBOL )+ )
             {
             root_0 = (CommonTree)adaptor.nil();
 
@@ -492,7 +493,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             match(input, Token.DOWN, null); 
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:23:17: ( SYMBOL )+
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:23:17: ( SYMBOL )+
             int cnt2=0;
             loop2:
             do {
@@ -506,7 +507,7 @@ public TreeAdaptor getTreeAdaptor() {
 
                 switch (alt2) {
             	case 1 :
-            	    // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSLWalker.g:23:17: SYMBOL
+            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:23:17: SYMBOL
             	    {
             	    _last = (CommonTree)input.LT(1);
             	    SYMBOL15=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_block167); 
@@ -574,6 +575,6 @@ public TreeAdaptor getTreeAdaptor() {
     public static final BitSet FOLLOW_block_in_exercise130 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_block_in_exercise135 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_BLOCK_in_block165 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SYMBOL_in_block167 = new BitSet(new long[]{0x0000000000000208L});
+    public static final BitSet FOLLOW_SYMBOL_in_block167 = new BitSet(new long[]{0x0000000000000408L});
 
 }

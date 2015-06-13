@@ -10,6 +10,7 @@ options {
 tokens{
   RESULT; 
   BLOCK;
+  PUZZLE;
 }
 
 @header {package output;}

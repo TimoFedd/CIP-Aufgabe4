@@ -51,7 +51,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     public static class riddle_return extends TreeRuleReturnScope {
-        CommonTree tree;
+        public CommonTree tree;
         public Object getTree() { return tree; }
     };
 

@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g 2015-06-13 12:26:53
+// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g 2015-06-13 13:19:28
 package output;
 
 import org.antlr.runtime.*;
@@ -12,10 +12,11 @@ public class DSLLexer extends Lexer {
     public static final int ADD=4;
     public static final int BLOCK=5;
     public static final int EQUAL=6;
-    public static final int RESULT=7;
-    public static final int SUB=8;
-    public static final int SYMBOL=9;
-    public static final int WS=10;
+    public static final int PUZZLE=7;
+    public static final int RESULT=8;
+    public static final int SUB=9;
+    public static final int SYMBOL=10;
+    public static final int WS=11;
 
     // delegates
     // delegators
@@ -30,15 +31,15 @@ public class DSLLexer extends Lexer {
     public DSLLexer(CharStream input, RecognizerSharedState state) {
         super(input,state);
     }
-    public String getGrammarFileName() { return "C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g"; }
+    public String getGrammarFileName() { return "C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g"; }
 
     // $ANTLR start "SYMBOL"
     public final void mSYMBOL() throws RecognitionException {
         try {
             int _type = SYMBOL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:40:8: ( ( 'A' .. 'Z' ) )
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:41:8: ( ( 'A' .. 'Z' ) )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:
             {
             if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z') ) {
                 input.consume();
@@ -66,8 +67,8 @@ public class DSLLexer extends Lexer {
         try {
             int _type = ADD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:41:5: ( '+' )
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:41:7: '+'
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:42:5: ( '+' )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:42:7: '+'
             {
             match('+'); 
 
@@ -87,8 +88,8 @@ public class DSLLexer extends Lexer {
         try {
             int _type = SUB;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:42:5: ( '-' )
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:42:7: '-'
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:43:5: ( '-' )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:43:7: '-'
             {
             match('-'); 
 
@@ -108,8 +109,8 @@ public class DSLLexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:43:7: ( '=' )
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:43:10: '='
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:44:7: ( '=' )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:44:10: '='
             {
             match('='); 
 
@@ -129,10 +130,10 @@ public class DSLLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:46:9: ( ( ' ' | '\\t' | '\\f' | '\\n' | '\\r' )+ )
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:46:11: ( ' ' | '\\t' | '\\f' | '\\n' | '\\r' )+
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:47:9: ( ( ' ' | '\\t' | '\\f' | '\\n' | '\\r' )+ )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:47:11: ( ' ' | '\\t' | '\\f' | '\\n' | '\\r' )+
             {
-            // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:46:11: ( ' ' | '\\t' | '\\f' | '\\n' | '\\r' )+
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:47:11: ( ' ' | '\\t' | '\\f' | '\\n' | '\\r' )+
             int cnt1=0;
             loop1:
             do {
@@ -146,7 +147,7 @@ public class DSLLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:
+            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:
             	    {
             	    if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||(input.LA(1) >= '\f' && input.LA(1) <= '\r')||input.LA(1)==' ' ) {
             	        input.consume();
@@ -185,7 +186,7 @@ public class DSLLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:1:8: ( SYMBOL | ADD | SUB | EQUAL | WS )
+        // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:1:8: ( SYMBOL | ADD | SUB | EQUAL | WS )
         int alt2=5;
         switch ( input.LA(1) ) {
         case 'A':
@@ -252,7 +253,7 @@ public class DSLLexer extends Lexer {
 
         switch (alt2) {
             case 1 :
-                // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:1:10: SYMBOL
+                // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:1:10: SYMBOL
                 {
                 mSYMBOL(); 
 
@@ -260,7 +261,7 @@ public class DSLLexer extends Lexer {
                 }
                 break;
             case 2 :
-                // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:1:17: ADD
+                // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:1:17: ADD
                 {
                 mADD(); 
 
@@ -268,7 +269,7 @@ public class DSLLexer extends Lexer {
                 }
                 break;
             case 3 :
-                // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:1:21: SUB
+                // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:1:21: SUB
                 {
                 mSUB(); 
 
@@ -276,7 +277,7 @@ public class DSLLexer extends Lexer {
                 }
                 break;
             case 4 :
-                // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:1:25: EQUAL
+                // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:1:25: EQUAL
                 {
                 mEQUAL(); 
 
@@ -284,7 +285,7 @@ public class DSLLexer extends Lexer {
                 }
                 break;
             case 5 :
-                // C:\\Users\\Timo\\Desktop\\CIP-Aufgabe41\\ANTL\\DSL.g:1:31: WS
+                // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g:1:31: WS
                 {
                 mWS(); 
 

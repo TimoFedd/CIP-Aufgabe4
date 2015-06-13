@@ -24,6 +24,7 @@ class Parser {
 		CommonTree walkerTree = (CommonTree) r.getTree();
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(walkerTree);
 		DSLWalker walker = new DSLWalker(nodes);
+		
 		System.out.println(walkerTree.toStringTree());
 		System.out.println(((CommonTree)  walker.riddle().getTree()).toStringTree());
 		

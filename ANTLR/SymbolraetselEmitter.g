@@ -14,9 +14,9 @@ import de.haw.cip.Number;
 
 }
 
-puzzle
+riddle
   :
-  ^(PUZZLE constraints+=constraint*)
+  constraints+=constraint*
   -> sums(sums={$constraints})
   ;
 
@@ -33,8 +33,7 @@ constraint.prepare();
   :
   ^(
     EQUAL
-    ^(ADD n1=number n2=number)
-    n3=number
+    ^(ADD n1=number n2=number) n3=number
    )
    -> sum(number1={$n1.number}, number2={$n2.number}, number3={$n3.number})
   ;

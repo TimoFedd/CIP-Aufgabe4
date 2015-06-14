@@ -45,7 +45,7 @@ public class Main {
 		System.out.println("\n\nnach dem normalisieren");
 		System.out.println(r2.toStringTree());
 
-/*
+
 		CommonTreeNodeStream nodes2 = new CommonTreeNodeStream(r2);
 		nodes2.setTokenStream(tokens);
 		SymbolraetselEmitter emitter = new SymbolraetselEmitter(nodes2);
@@ -56,12 +56,12 @@ public class Main {
 				new InputStreamReader(templateIs, "ISO-8859-15"),
 				AngleBracketTemplateLexer.class);
 		emitter.setTemplateLib(templates);
-		SymbolraetselEmitter.puzzle_return puzzle_return = emitter.puzzle();
+		SymbolraetselEmitter.riddle_return puzzle_return = emitter.riddle();
 		String output = puzzle_return.getTemplate().toString();
 		System.out.println("\n\nausgabe");
 		System.out.println(output);
 
-*/
+
 
 	}
 

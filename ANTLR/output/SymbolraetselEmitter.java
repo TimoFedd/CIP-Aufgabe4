@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g 2015-06-13 21:39:26
+// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g 2015-06-14 12:56:32
 
 package output;
 import de.haw.cip.Constraint;
@@ -72,65 +72,57 @@ public static class STAttrMap extends HashMap {
     public String getGrammarFileName() { return "C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g"; }
 
 
-    public static class puzzle_return extends TreeRuleReturnScope {
+    public static class riddle_return extends TreeRuleReturnScope {
         public StringTemplate st;
         public Object getTemplate() { return st; }
         public String toString() { return st==null?null:st.toString(); }
     };
 
 
-    // $ANTLR start "puzzle"
-    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:17:1: puzzle : ^( PUZZLE (constraints+= constraint )* ) -> sums(sums=$constraints);
-    public final SymbolraetselEmitter.puzzle_return puzzle() throws RecognitionException {
-        SymbolraetselEmitter.puzzle_return retval = new SymbolraetselEmitter.puzzle_return();
+    // $ANTLR start "riddle"
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:17:1: riddle : (constraints+= constraint )* -> sums(sums=$constraints);
+    public final SymbolraetselEmitter.riddle_return riddle() throws RecognitionException {
+        SymbolraetselEmitter.riddle_return retval = new SymbolraetselEmitter.riddle_return();
         retval.start = input.LT(1);
 
 
         List list_constraints=null;
         RuleReturnScope constraints = null;
         try {
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:18:3: ( ^( PUZZLE (constraints+= constraint )* ) -> sums(sums=$constraints))
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:19:3: ^( PUZZLE (constraints+= constraint )* )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:18:3: ( (constraints+= constraint )* -> sums(sums=$constraints))
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:19:3: (constraints+= constraint )*
             {
-            match(input,PUZZLE,FOLLOW_PUZZLE_in_puzzle66); 
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:19:14: (constraints+= constraint )*
+            loop1:
+            do {
+                int alt1=2;
+                int LA1_0 = input.LA(1);
 
-            if ( input.LA(1)==Token.DOWN ) {
-                match(input, Token.DOWN, null); 
-                // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:19:23: (constraints+= constraint )*
-                loop1:
-                do {
-                    int alt1=2;
-                    int LA1_0 = input.LA(1);
-
-                    if ( (LA1_0==EQUAL) ) {
-                        alt1=1;
-                    }
+                if ( (LA1_0==EQUAL) ) {
+                    alt1=1;
+                }
 
 
-                    switch (alt1) {
-                	case 1 :
-                	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:19:23: constraints+= constraint
-                	    {
-                	    pushFollow(FOLLOW_constraint_in_puzzle70);
-                	    constraints=constraint();
+                switch (alt1) {
+            	case 1 :
+            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:19:14: constraints+= constraint
+            	    {
+            	    pushFollow(FOLLOW_constraint_in_riddle67);
+            	    constraints=constraint();
 
-                	    state._fsp--;
+            	    state._fsp--;
 
-                	    if (list_constraints==null) list_constraints=new ArrayList();
-                	    list_constraints.add(constraints.getTemplate());
-
-
-                	    }
-                	    break;
-
-                	default :
-                	    break loop1;
-                    }
-                } while (true);
+            	    if (list_constraints==null) list_constraints=new ArrayList();
+            	    list_constraints.add(constraints.getTemplate());
 
 
-                match(input, Token.UP, null); 
-            }
+            	    }
+            	    break;
+
+            	default :
+            	    break loop1;
+                }
+            } while (true);
 
 
             // TEMPLATE REWRITE
@@ -154,7 +146,7 @@ public static class STAttrMap extends HashMap {
         }
         return retval;
     }
-    // $ANTLR end "puzzle"
+    // $ANTLR end "riddle"
 
 
     public static class constraint_return extends TreeRuleReturnScope {
@@ -182,19 +174,19 @@ public static class STAttrMap extends HashMap {
             // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:33:3: ( ^( EQUAL ^( ADD n1= number n2= number ) n3= number ) -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number))
             // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:34:3: ^( EQUAL ^( ADD n1= number n2= number ) n3= number )
             {
-            match(input,EQUAL,FOLLOW_EQUAL_in_constraint111); 
+            match(input,EQUAL,FOLLOW_EQUAL_in_constraint107); 
 
             match(input, Token.DOWN, null); 
-            match(input,ADD,FOLLOW_ADD_in_constraint118); 
+            match(input,ADD,FOLLOW_ADD_in_constraint114); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_number_in_constraint122);
+            pushFollow(FOLLOW_number_in_constraint118);
             n1=number();
 
             state._fsp--;
 
 
-            pushFollow(FOLLOW_number_in_constraint126);
+            pushFollow(FOLLOW_number_in_constraint122);
             n2=number();
 
             state._fsp--;
@@ -203,7 +195,7 @@ public static class STAttrMap extends HashMap {
             match(input, Token.UP, null); 
 
 
-            pushFollow(FOLLOW_number_in_constraint135);
+            pushFollow(FOLLOW_number_in_constraint127);
             n3=number();
 
             state._fsp--;
@@ -213,7 +205,7 @@ public static class STAttrMap extends HashMap {
 
 
             // TEMPLATE REWRITE
-            // 39:4: -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number)
+            // 38:4: -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number)
             {
                 retval.st = templateLib.getInstanceOf("sum",new STAttrMap().put("number1", (n1!=null?n1.number:null)).put("number2", (n2!=null?n2.number:null)).put("number3", (n3!=null?n3.number:null)));
             }
@@ -252,7 +244,7 @@ public static class STAttrMap extends HashMap {
 
 
     // $ANTLR start "number"
-    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:42:1: number returns [Number number] : ^( BLOCK (syms+= SYMBOL )+ ) ;
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:41:1: number returns [Number number] : ^( BLOCK (syms+= SYMBOL )+ ) ;
     public final SymbolraetselEmitter.number_return number() throws RecognitionException {
         SymbolraetselEmitter.number_return retval = new SymbolraetselEmitter.number_return();
         retval.start = input.LT(1);
@@ -262,13 +254,13 @@ public static class STAttrMap extends HashMap {
         List list_syms=null;
 
         try {
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:47:3: ( ^( BLOCK (syms+= SYMBOL )+ ) )
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:48:3: ^( BLOCK (syms+= SYMBOL )+ )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:46:3: ( ^( BLOCK (syms+= SYMBOL )+ ) )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:47:3: ^( BLOCK (syms+= SYMBOL )+ )
             {
-            match(input,BLOCK,FOLLOW_BLOCK_in_number187); 
+            match(input,BLOCK,FOLLOW_BLOCK_in_number179); 
 
             match(input, Token.DOWN, null); 
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:48:15: (syms+= SYMBOL )+
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:47:15: (syms+= SYMBOL )+
             int cnt2=0;
             loop2:
             do {
@@ -282,9 +274,9 @@ public static class STAttrMap extends HashMap {
 
                 switch (alt2) {
             	case 1 :
-            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:48:15: syms+= SYMBOL
+            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:47:15: syms+= SYMBOL
             	    {
-            	    syms=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_number191); 
+            	    syms=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_number183); 
             	    if (list_syms==null) list_syms=new ArrayList();
             	    list_syms.add(syms);
 
@@ -329,14 +321,13 @@ public static class STAttrMap extends HashMap {
 
  
 
-    public static final BitSet FOLLOW_PUZZLE_in_puzzle66 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_constraint_in_puzzle70 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_EQUAL_in_constraint111 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ADD_in_constraint118 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_number_in_constraint122 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_number_in_constraint126 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_number_in_constraint135 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_BLOCK_in_number187 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SYMBOL_in_number191 = new BitSet(new long[]{0x0000000000000408L});
+    public static final BitSet FOLLOW_constraint_in_riddle67 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_EQUAL_in_constraint107 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ADD_in_constraint114 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_number_in_constraint118 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_number_in_constraint122 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_number_in_constraint127 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_BLOCK_in_number179 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SYMBOL_in_number183 = new BitSet(new long[]{0x0000000000000408L});
 
 }

@@ -1,7 +1,42 @@
 group template;
 
 sums(symbols,sums) ::= <<
-<sums; separator="\n\n">
+import choco.Choco;
+import choco.Options;
+import choco.cp.model.CPModel;
+import choco.cp.solver.CPSolver;
+import choco.kernel.model.Model;
+import choco.kernel.model.variables.integer.IntegerExpressionVariable;
+import choco.kernel.model.variables.integer.IntegerVariable;
+import choco.kernel.solver.Solver;
+
+public class PuzzleSolver {
+
+  private static final IntegerVariable ZERO = Choco.constant(0);
+
+  /**
+   * Loesen des Zahlenraetsels
+   */
+  public static void main(String[] args) {
+    Model model = new CPModel();
+
+    <symbols:{symbol| IntegerVariable <symbol> = Choco.makeIntVar("<symbol>", 0, 9, Options.V_ENUM); <\n>} >
+
+    IntegerExpressionVariable carry = ZERO;
+ 
+    <sums; separator="\n">
+
+    model.addConstraint(Choco.allDifferent(<symbols; separator=", ">));
+
+    Solver s = new CPSolver();
+    s.read(model);
+    s.solve();
+
+    <symbols:{symbol| System.out.println("<symbol> = " + s.getVar(<symbol>).getVal()); }; separator="\n">
+  }
+
+}
+
 >>
 
 

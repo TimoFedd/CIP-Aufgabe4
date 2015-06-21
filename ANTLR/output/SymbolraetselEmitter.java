@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g 2015-06-21 14:49:14
+// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g 2015-06-21 15:28:58
 
 package output;
 import de.haw.cip.Number;
@@ -76,7 +76,7 @@ public static class STAttrMap extends HashMap {
     public String getGrammarFileName() { return "C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g"; }
 
 
-    List<Character> symbols = new ArrayList<Character>();  
+    Set<Character> symbols = new HashSet<Character>(); 
 
 
     public static class riddle_return extends TreeRuleReturnScope {

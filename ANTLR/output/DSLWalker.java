@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g 2015-06-13 21:45:01
+// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g 2015-06-21 15:26:05
 package output;
 
 import org.antlr.runtime.*;
@@ -52,8 +52,11 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     public static class riddle_return extends TreeRuleReturnScope {
-        public CommonTree tree;
+        private CommonTree tree;
         public Object getTree() { return tree; }
+		public void setTree(CommonTree tree) {
+			this.tree = tree;
+		}
     };
 
 
@@ -146,7 +149,7 @@ public TreeAdaptor getTreeAdaptor() {
 
             }
 
-            retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
+            retval.setTree((CommonTree)adaptor.rulePostProcessing(root_0));
 
         }
         catch (RecognitionException re) {
@@ -169,7 +172,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "exercise"
-    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:20:1: exercise : ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) );
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:20:1: exercise : ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl1 $bl2) $bl3) );
     public final DSLWalker.exercise_return exercise() throws RecognitionException {
         DSLWalker.exercise_return retval = new DSLWalker.exercise_return();
         retval.start = input.LT(1);
@@ -205,7 +208,7 @@ public TreeAdaptor getTreeAdaptor() {
         RewriteRuleNodeStream stream_EQUAL=new RewriteRuleNodeStream(adaptor,"token EQUAL");
         RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
         try {
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:20:10: ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1) )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:20:10: ( ^( EQUAL ^( ADD block block ) block ) | ^( EQUAL ^( SUB bl1= block bl2= block ) bl3= block ) -> ^( EQUAL ^( ADD[\"+\"] $bl1 $bl2) $bl3) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -382,7 +385,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
                     // AST REWRITE
-                    // elements: bl1, bl2, bl3, EQUAL
+                    // elements: bl2, bl1, bl3, EQUAL
                     // token labels: 
                     // rule labels: bl1, bl3, bl2, retval
                     // token list labels: 
@@ -395,30 +398,30 @@ public TreeAdaptor getTreeAdaptor() {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (CommonTree)adaptor.nil();
-                    // 21:65: -> ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
+                    // 21:65: -> ^( EQUAL ^( ADD[\"+\"] $bl1 $bl2) $bl3)
                     {
-                        // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:21:68: ^( EQUAL ^( ADD[\"+\"] $bl3 $bl2) $bl1)
+                        // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:21:68: ^( EQUAL ^( ADD[\"+\"] $bl1 $bl2) $bl3)
                         {
                         CommonTree root_1 = (CommonTree)adaptor.nil();
                         root_1 = (CommonTree)adaptor.becomeRoot(
                         stream_EQUAL.nextNode()
                         , root_1);
 
-                        // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:21:76: ^( ADD[\"+\"] $bl3 $bl2)
+                        // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSLWalker.g:21:76: ^( ADD[\"+\"] $bl1 $bl2)
                         {
                         CommonTree root_2 = (CommonTree)adaptor.nil();
                         root_2 = (CommonTree)adaptor.becomeRoot(
                         (CommonTree)adaptor.create(ADD, "+")
                         , root_2);
 
-                        adaptor.addChild(root_2, stream_bl3.nextTree());
+                        adaptor.addChild(root_2, stream_bl1.nextTree());
 
                         adaptor.addChild(root_2, stream_bl2.nextTree());
 
                         adaptor.addChild(root_1, root_2);
                         }
 
-                        adaptor.addChild(root_1, stream_bl1.nextTree());
+                        adaptor.addChild(root_1, stream_bl3.nextTree());
 
                         adaptor.addChild(root_0, root_1);
                         }

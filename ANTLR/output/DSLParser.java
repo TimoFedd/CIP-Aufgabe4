@@ -1,4 +1,4 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g 2015-06-13 21:51:09
+// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\DSL.g 2015-06-21 15:26:18
 package output;
 
 import org.antlr.runtime.*;
@@ -254,18 +254,18 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: op4, opr22, opr01, opr10, opr02, opr12, op6, opr20, op3, opr21, op1, EQUAL, opr11, EQUAL, opr12, opr10, opr01, EQUAL, opr21, EQUAL, opr22, opr11, opr02, opr00, op5, op2, opr00, opr20, EQUAL, EQUAL
+            // elements: opr01, opr21, opr22, op1, opr02, op5, opr00, opr01, opr11, opr22, EQUAL, op6, EQUAL, EQUAL, opr20, op3, opr21, opr12, opr02, opr20, opr00, op2, EQUAL, opr10, opr10, EQUAL, EQUAL, opr11, op4, opr12
             // token labels: 
-            // rule labels: opr10, opr21, opr22, opr11, opr00, opr01, opr12, opr02, retval, op2, op1, op4, op3, op6, op5, opr20
+            // rule labels: opr21, opr10, opr22, opr00, opr11, opr01, opr12, opr02, retval, op2, op1, op4, op3, op6, op5, opr20
             // token list labels: 
             // rule list labels: 
             // wildcard labels: 
             retval.tree = root_0;
-            RewriteRuleSubtreeStream stream_opr10=new RewriteRuleSubtreeStream(adaptor,"rule opr10",opr10!=null?opr10.tree:null);
             RewriteRuleSubtreeStream stream_opr21=new RewriteRuleSubtreeStream(adaptor,"rule opr21",opr21!=null?opr21.tree:null);
+            RewriteRuleSubtreeStream stream_opr10=new RewriteRuleSubtreeStream(adaptor,"rule opr10",opr10!=null?opr10.tree:null);
             RewriteRuleSubtreeStream stream_opr22=new RewriteRuleSubtreeStream(adaptor,"rule opr22",opr22!=null?opr22.tree:null);
-            RewriteRuleSubtreeStream stream_opr11=new RewriteRuleSubtreeStream(adaptor,"rule opr11",opr11!=null?opr11.tree:null);
             RewriteRuleSubtreeStream stream_opr00=new RewriteRuleSubtreeStream(adaptor,"rule opr00",opr00!=null?opr00.tree:null);
+            RewriteRuleSubtreeStream stream_opr11=new RewriteRuleSubtreeStream(adaptor,"rule opr11",opr11!=null?opr11.tree:null);
             RewriteRuleSubtreeStream stream_opr01=new RewriteRuleSubtreeStream(adaptor,"rule opr01",opr01!=null?opr01.tree:null);
             RewriteRuleSubtreeStream stream_opr12=new RewriteRuleSubtreeStream(adaptor,"rule opr12",opr12!=null?opr12.tree:null);
             RewriteRuleSubtreeStream stream_opr02=new RewriteRuleSubtreeStream(adaptor,"rule opr02",opr02!=null?opr02.tree:null);

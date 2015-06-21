@@ -40,7 +40,7 @@ public class Main {
 		nodes.setTokenStream(tokens);
 		DSLWalker normalizer = new DSLWalker(nodes);
 		DSLWalker.riddle_return ast2 = normalizer.riddle();
-		CommonTree r2 = ((CommonTree) ast2.tree);
+		CommonTree r2 = ((CommonTree) ast2.getTree());
 		
 		System.out.println("\n\nnach dem normalisieren");
 		System.out.println(r2.toStringTree());

@@ -41,7 +41,10 @@ public class PuzzleSolver {
 
 
 sum(number1, number2, number3) ::= <<
-<number1.characters, number2.characters, number3.characters :
-  {n1, n2, n3 | <if(n1)><n1><else>0<endif> + <if(n2)><n2><else>0<endif> = <if(n3)><n3><else>0<endif>;}
-  ; separator="\n">
+<number1.Characters, number2.Characters, number3.Characters :
+  {n1, n2, n3 |
+carry = Choco.sum(<if(n1)><n1><else>ZERO<endif>, <if(n2)><n2><else>ZERO<endif>, Choco.div(carry, 10));
+model.addConstraint(Choco.eq(<if(n3)><n3><else>ZERO<endif>, Choco.mod(carry, 10)));}; separator="\n">
+
+carry = ZERO;
 >>

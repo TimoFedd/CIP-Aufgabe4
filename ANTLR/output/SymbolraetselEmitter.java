@@ -1,7 +1,6 @@
-// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g 2015-06-14 22:33:12
+// $ANTLR 3.4 C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g 2015-06-21 12:28:56
 
 package output;
-import de.haw.cip.Constraint;
 import de.haw.cip.Number;
 import java.util.HashSet;
 import java.util.Set;
@@ -87,7 +86,7 @@ public static class STAttrMap extends HashMap {
 
 
     // $ANTLR start "riddle"
-    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:25:1: riddle : (constraints+= constraint )* -> sums(symbols=symbolssums=$constraints);
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:24:1: riddle : (constraints+= constraint )* -> sums(symbols=symbolssums=$constraints);
     public final SymbolraetselEmitter.riddle_return riddle() throws RecognitionException {
         SymbolraetselEmitter.riddle_return retval = new SymbolraetselEmitter.riddle_return();
         retval.start = input.LT(1);
@@ -96,10 +95,10 @@ public static class STAttrMap extends HashMap {
         List list_constraints=null;
         RuleReturnScope constraints = null;
         try {
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:26:3: ( (constraints+= constraint )* -> sums(symbols=symbolssums=$constraints))
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:27:3: (constraints+= constraint )*
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:25:3: ( (constraints+= constraint )* -> sums(symbols=symbolssums=$constraints))
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:26:3: (constraints+= constraint )*
             {
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:27:14: (constraints+= constraint )*
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:26:14: (constraints+= constraint )*
             loop1:
             do {
                 int alt1=2;
@@ -112,7 +111,7 @@ public static class STAttrMap extends HashMap {
 
                 switch (alt1) {
             	case 1 :
-            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:27:14: constraints+= constraint
+            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:26:14: constraints+= constraint
             	    {
             	    pushFollow(FOLLOW_constraint_in_riddle73);
             	    constraints=constraint();
@@ -133,7 +132,7 @@ public static class STAttrMap extends HashMap {
 
 
             // TEMPLATE REWRITE
-            // 28:3: -> sums(symbols=symbolssums=$constraints)
+            // 27:3: -> sums(symbols=symbolssums=$constraints)
             {
                 retval.st = templateLib.getInstanceOf("sums",new STAttrMap().put("symbols", symbols).put("sums", list_constraints));
             }
@@ -164,7 +163,7 @@ public static class STAttrMap extends HashMap {
 
 
     // $ANTLR start "constraint"
-    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:33:1: constraint : ^( EQUAL ^( ADD n1= number n2= number ) n3= number ) -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number);
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:32:1: constraint : ^( EQUAL ^( ADD n1= number n2= number ) n3= number ) -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number);
     public final SymbolraetselEmitter.constraint_return constraint() throws RecognitionException {
         SymbolraetselEmitter.constraint_return retval = new SymbolraetselEmitter.constraint_return();
         retval.start = input.LT(1);
@@ -178,22 +177,22 @@ public static class STAttrMap extends HashMap {
 
 
         try {
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:41:3: ( ^( EQUAL ^( ADD n1= number n2= number ) n3= number ) -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number))
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:42:3: ^( EQUAL ^( ADD n1= number n2= number ) n3= number )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:33:3: ( ^( EQUAL ^( ADD n1= number n2= number ) n3= number ) -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number))
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:34:3: ^( EQUAL ^( ADD n1= number n2= number ) n3= number )
             {
-            match(input,EQUAL,FOLLOW_EQUAL_in_constraint118); 
+            match(input,EQUAL,FOLLOW_EQUAL_in_constraint113); 
 
             match(input, Token.DOWN, null); 
-            match(input,ADD,FOLLOW_ADD_in_constraint125); 
+            match(input,ADD,FOLLOW_ADD_in_constraint120); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_number_in_constraint129);
+            pushFollow(FOLLOW_number_in_constraint124);
             n1=number();
 
             state._fsp--;
 
 
-            pushFollow(FOLLOW_number_in_constraint133);
+            pushFollow(FOLLOW_number_in_constraint128);
             n2=number();
 
             state._fsp--;
@@ -202,7 +201,7 @@ public static class STAttrMap extends HashMap {
             match(input, Token.UP, null); 
 
 
-            pushFollow(FOLLOW_number_in_constraint138);
+            pushFollow(FOLLOW_number_in_constraint133);
             n3=number();
 
             state._fsp--;
@@ -212,7 +211,7 @@ public static class STAttrMap extends HashMap {
 
 
             // TEMPLATE REWRITE
-            // 46:4: -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number)
+            // 38:4: -> sum(number1=$n1.numbernumber2=$n2.numbernumber3=$n3.number)
             {
                 retval.st = templateLib.getInstanceOf("sum",new STAttrMap().put("number1", (n1!=null?n1.number:null)).put("number2", (n2!=null?n2.number:null)).put("number3", (n3!=null?n3.number:null)));
             }
@@ -220,13 +219,6 @@ public static class STAttrMap extends HashMap {
 
 
             }
-
-
-            Constraint constraint = new Constraint();
-            constraint.numbers.add((n1!=null?n1.number:null));
-            constraint.numbers.add((n2!=null?n2.number:null));
-            constraint.numbers.add((n3!=null?n3.number:null));
-            constraint.prepare();
 
         }
         catch (RecognitionException re) {
@@ -251,7 +243,7 @@ public static class STAttrMap extends HashMap {
 
 
     // $ANTLR start "number"
-    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:49:1: number returns [Number number] : ^( BLOCK (syms+= SYMBOL )+ ) ;
+    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:41:1: number returns [Number number] : ^( BLOCK (syms+= SYMBOL )+ ) ;
     public final SymbolraetselEmitter.number_return number() throws RecognitionException {
         SymbolraetselEmitter.number_return retval = new SymbolraetselEmitter.number_return();
         retval.start = input.LT(1);
@@ -261,13 +253,13 @@ public static class STAttrMap extends HashMap {
         List list_syms=null;
 
         try {
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:55:3: ( ^( BLOCK (syms+= SYMBOL )+ ) )
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:56:3: ^( BLOCK (syms+= SYMBOL )+ )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:47:3: ( ^( BLOCK (syms+= SYMBOL )+ ) )
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:48:3: ^( BLOCK (syms+= SYMBOL )+ )
             {
-            match(input,BLOCK,FOLLOW_BLOCK_in_number190); 
+            match(input,BLOCK,FOLLOW_BLOCK_in_number185); 
 
             match(input, Token.DOWN, null); 
-            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:56:15: (syms+= SYMBOL )+
+            // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:48:15: (syms+= SYMBOL )+
             int cnt2=0;
             loop2:
             do {
@@ -281,9 +273,9 @@ public static class STAttrMap extends HashMap {
 
                 switch (alt2) {
             	case 1 :
-            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:56:15: syms+= SYMBOL
+            	    // C:\\Users\\Timo\\Desktop\\cip4\\ANTLR\\SymbolraetselEmitter.g:48:15: syms+= SYMBOL
             	    {
-            	    syms=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_number194); 
+            	    syms=(CommonTree)match(input,SYMBOL,FOLLOW_SYMBOL_in_number189); 
             	    if (list_syms==null) list_syms=new ArrayList();
             	    list_syms.add(syms);
 
@@ -330,12 +322,12 @@ public static class STAttrMap extends HashMap {
  
 
     public static final BitSet FOLLOW_constraint_in_riddle73 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_EQUAL_in_constraint118 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ADD_in_constraint125 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_number_in_constraint129 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_EQUAL_in_constraint113 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ADD_in_constraint120 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_number_in_constraint124 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_number_in_constraint128 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_number_in_constraint133 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_number_in_constraint138 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_BLOCK_in_number190 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SYMBOL_in_number194 = new BitSet(new long[]{0x0000000000000408L});
+    public static final BitSet FOLLOW_BLOCK_in_number185 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SYMBOL_in_number189 = new BitSet(new long[]{0x0000000000000408L});
 
 }

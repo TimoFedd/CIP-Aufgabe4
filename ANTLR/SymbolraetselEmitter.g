@@ -9,7 +9,6 @@ options {
   
 @header {
 package output;
-import de.haw.cip.Constraint;
 import de.haw.cip.Number;
 import java.util.HashSet;
 import java.util.Set;
@@ -31,13 +30,6 @@ riddle
 
 
 constraint
-@after {
-Constraint constraint = new Constraint();
-constraint.numbers.add($n1.number);
-constraint.numbers.add($n2.number);
-constraint.numbers.add($n3.number);
-constraint.prepare();
-}
   :
   ^(
     EQUAL

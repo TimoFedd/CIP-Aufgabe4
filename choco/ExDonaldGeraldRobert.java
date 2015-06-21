@@ -45,6 +45,8 @@ public class ExDonaldGeraldRobert {
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(o, e), u4), Choco.plus(o, Choco.mult(u5, 10))));
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(d, g), u5), Choco.plus(r, Choco.mult(u0, 10))));
 
+				
+				
 				//donald
 				//gerald
 				//robert

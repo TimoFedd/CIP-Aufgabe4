@@ -18,134 +18,117 @@ public class PuzzleSolver {
     Model model = new CPModel();
 
     IntegerVariable A = Choco.makeIntVar("A", 0, 9, Options.V_ENUM); 
-    IntegerVariable Q = Choco.makeIntVar("Q", 0, 9, Options.V_ENUM); 
     IntegerVariable B = Choco.makeIntVar("B", 0, 9, Options.V_ENUM); 
-    IntegerVariable S = Choco.makeIntVar("S", 0, 9, Options.V_ENUM); 
     IntegerVariable C = Choco.makeIntVar("C", 0, 9, Options.V_ENUM); 
     IntegerVariable D = Choco.makeIntVar("D", 0, 9, Options.V_ENUM); 
-    IntegerVariable U = Choco.makeIntVar("U", 0, 9, Options.V_ENUM); 
+    IntegerVariable F = Choco.makeIntVar("F", 0, 9, Options.V_ENUM); 
+    IntegerVariable G = Choco.makeIntVar("G", 0, 9, Options.V_ENUM); 
     IntegerVariable H = Choco.makeIntVar("H", 0, 9, Options.V_ENUM); 
-    IntegerVariable I = Choco.makeIntVar("I", 0, 9, Options.V_ENUM); 
-    IntegerVariable Z = Choco.makeIntVar("Z", 0, 9, Options.V_ENUM); 
-    IntegerVariable N = Choco.makeIntVar("N", 0, 9, Options.V_ENUM); 
+    IntegerVariable J = Choco.makeIntVar("J", 0, 9, Options.V_ENUM); 
+    IntegerVariable K = Choco.makeIntVar("K", 0, 9, Options.V_ENUM); 
+    IntegerVariable L = Choco.makeIntVar("L", 0, 9, Options.V_ENUM); 
 
 
     IntegerExpressionVariable carry = ZERO;
  
-    carry = Choco.sum(A, S, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(A, S), 0), Choco.plus(A, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, ZERO), carry), Choco.plus(G, Choco.mod(carry, 10))));
+    carry = Choco.sum(G, ZERO, Choco.div(carry, 10));
 
-    carry = Choco.sum(S, D, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(S, D), carry), Choco.plus(S, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, F), carry), Choco.plus(L, Choco.mod(carry, 10))));
+    carry = Choco.sum(F, F, Choco.div(carry, 10));
 
-    carry = Choco.sum(D, S, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, S), carry), Choco.plus(D, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, L), carry), Choco.plus(G, Choco.mod(carry, 10))));
+    carry = Choco.sum(G, L, Choco.div(carry, 10));
 
-    carry = Choco.sum(ZERO, D, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(ZERO, D), carry), Choco.plus(A, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(ZERO, A, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(ZERO, A), carry), Choco.plus(D, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(K, K), carry), Choco.plus(H, Choco.mod(carry, 10))));
+    carry = Choco.sum(K, K, Choco.div(carry, 10));
 
 
     carry = ZERO;
-    carry = Choco.sum(U, H, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(U, H), 0), Choco.plus(I, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(C, ZERO), carry), Choco.plus(C, Choco.mod(carry, 10))));
+    carry = Choco.sum(C, ZERO, Choco.div(carry, 10));
 
-    carry = Choco.sum(I, U, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(I, U), carry), Choco.plus(N, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, B), carry), Choco.plus(H, Choco.mod(carry, 10))));
+    carry = Choco.sum(F, B, Choco.div(carry, 10));
 
-    carry = Choco.sum(H, I, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(H, I), carry), Choco.plus(N, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(H, J), carry), Choco.plus(A, Choco.mod(carry, 10))));
+    carry = Choco.sum(H, J, Choco.div(carry, 10));
 
-    carry = Choco.sum(I, H, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(I, H), carry), Choco.plus(ZERO, Choco.mod(carry, 10))));
-
-
-    carry = ZERO;
-    carry = Choco.sum(U, U, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(U, U), 0), Choco.plus(Q, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(B, U, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(B, U), carry), Choco.plus(C, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(U, I, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(U, I), carry), Choco.plus(Z, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(S, B, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(S, B), carry), Choco.plus(ZERO, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(ZERO, N, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(ZERO, N), carry), Choco.plus(ZERO, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(C, J), carry), Choco.plus(L, Choco.mod(carry, 10))));
+    carry = Choco.sum(C, J, Choco.div(carry, 10));
 
 
     carry = ZERO;
-    carry = Choco.sum(A, I, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(A, I), 0), Choco.plus(U, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(K, ZERO), carry), Choco.plus(K, Choco.mod(carry, 10))));
+    carry = Choco.sum(K, ZERO, Choco.div(carry, 10));
 
-    carry = Choco.sum(S, N, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(S, N), carry), Choco.plus(B, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, A), carry), Choco.plus(F, Choco.mod(carry, 10))));
+    carry = Choco.sum(D, A, Choco.div(carry, 10));
 
-    carry = Choco.sum(D, N, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, N), carry), Choco.plus(U, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(L, C), carry), Choco.plus(B, Choco.mod(carry, 10))));
+    carry = Choco.sum(L, C, Choco.div(carry, 10));
 
-    carry = Choco.sum(ZERO, ZERO, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(ZERO, ZERO), carry), Choco.plus(S, Choco.mod(carry, 10))));
-
-
-    carry = ZERO;
-    carry = Choco.sum(U, H, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(U, H), 0), Choco.plus(S, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(U, U, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(U, U), carry), Choco.plus(D, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(I, I, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(I, I), carry), Choco.plus(S, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(B, H, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(B, H), carry), Choco.plus(D, Choco.mod(carry, 10))));
-
-    carry = Choco.sum(N, ZERO, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(N, ZERO), carry), Choco.plus(A, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(J, B), carry), Choco.plus(K, Choco.mod(carry, 10))));
+    carry = Choco.sum(J, B, Choco.div(carry, 10));
 
 
     carry = ZERO;
-    carry = Choco.sum(A, U, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(A, U),0), Choco.plus(Q, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, C), carry), Choco.plus(K, Choco.mod(carry, 10))));
+    carry = Choco.sum(G, C, Choco.div(carry, 10));
 
-    carry = Choco.sum(S, I, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(S, I), carry), Choco.plus(C, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, H), carry), Choco.plus(D, Choco.mod(carry, 10))));
+    carry = Choco.sum(F, H, Choco.div(carry, 10));
 
-    carry = Choco.sum(D, H, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, H), carry), Choco.plus(Z, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, A), carry), Choco.plus(L, Choco.mod(carry, 10))));
+    carry = Choco.sum(G, A, Choco.div(carry, 10));
 
-    carry = Choco.sum(A, I, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(A, I), carry), Choco.plus(ZERO, Choco.mod(carry, 10))));
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(K, L), carry), Choco.plus(J, Choco.mod(carry, 10))));
+    carry = Choco.sum(K, L, Choco.div(carry, 10));
 
-    carry = Choco.sum(D, ZERO, Choco.div(carry, 10));
-    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, ZERO), carry), Choco.plus(ZERO, Choco.mod(carry, 10))));
+
+    carry = ZERO;
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(A, B), carry), Choco.plus(F, Choco.mod(carry, 10))));
+    carry = Choco.sum(A, B, Choco.div(carry, 10));
+
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(C, J), carry), Choco.plus(L, Choco.mod(carry, 10))));
+    carry = Choco.sum(C, J, Choco.div(carry, 10));
+
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(B, J), carry), Choco.plus(K, Choco.mod(carry, 10))));
+    carry = Choco.sum(B, J, Choco.div(carry, 10));
+
+
+    carry = ZERO;
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, C), carry), Choco.plus(K, Choco.mod(carry, 10))));
+    carry = Choco.sum(G, C, Choco.div(carry, 10));
+
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(L, F), carry), Choco.plus(F, Choco.mod(carry, 10))));
+    carry = Choco.sum(L, F, Choco.div(carry, 10));
+
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, H), carry), Choco.plus(B, Choco.mod(carry, 10))));
+    carry = Choco.sum(G, H, Choco.div(carry, 10));
+
+    model.addConstraint(Choco.eq(Choco.plus(Choco.plus(H, C), carry), Choco.plus(K, Choco.mod(carry, 10))));
+    carry = Choco.sum(H, C, Choco.div(carry, 10));
 
 
     carry = ZERO;
 
-    model.addConstraint(Choco.allDifferent(A, Q, B, S, C, D, U, H, I, Z, N));
+    model.addConstraint(Choco.allDifferent(A, B, C, D, F, G, H, J, K, L));
 
     Solver s = new CPSolver();
     s.read(model);
     s.solve();
 
     System.out.println("A = " + s.getVar(A).getVal()); 
-    System.out.println("Q = " + s.getVar(Q).getVal()); 
     System.out.println("B = " + s.getVar(B).getVal()); 
-    System.out.println("S = " + s.getVar(S).getVal()); 
     System.out.println("C = " + s.getVar(C).getVal()); 
     System.out.println("D = " + s.getVar(D).getVal()); 
-    System.out.println("U = " + s.getVar(U).getVal()); 
+    System.out.println("F = " + s.getVar(F).getVal()); 
+    System.out.println("G = " + s.getVar(G).getVal()); 
     System.out.println("H = " + s.getVar(H).getVal()); 
-    System.out.println("I = " + s.getVar(I).getVal()); 
-    System.out.println("Z = " + s.getVar(Z).getVal()); 
-    System.out.println("N = " + s.getVar(N).getVal()); 
+    System.out.println("J = " + s.getVar(J).getVal()); 
+    System.out.println("K = " + s.getVar(K).getVal()); 
+    System.out.println("L = " + s.getVar(L).getVal()); 
   }
 
 }

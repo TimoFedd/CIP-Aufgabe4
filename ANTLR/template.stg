@@ -41,15 +41,12 @@ public class PuzzleSolver {
 
 
 sum(number1, number2, number3) ::= <<
+
+
+
 <number1.Characters, number2.Characters, number3.Characters :
   {n1, n2, n3 |
-model.addConstraint(Choco.eq(Choco.plus(Choco.plus(<if(n1)><n1><else>ZERO<endif>, <if(n2)><n2><else>ZERO<endif>), carry), Choco.plus(<if(n3)><n3><else>ZERO<endif>, Choco.mod(carry, 10))));
-carry = Choco.sum(<if(n1)><n1><else>ZERO<endif>, <if(n2)><n2><else>ZERO<endif>, Choco.div(carry, 10));};separator="\n">
-carry = ZERO;
-
-
-
-
+model.addConstraint(Choco.eq(Choco.plus(Choco.plus(<if(n1)><n1><else>ZERO<endif>, <if(n2)><n2><else>ZERO<endif>), carry), Choco.plus(<if(n3)><n3><else>ZERO<endif>, Choco.mult( carry,10))));};separator="\n">
 >>
 
 

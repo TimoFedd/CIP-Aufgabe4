@@ -1,4 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 import choco.Choco;
 import choco.Options;
@@ -35,8 +39,7 @@ public class ExDonaldGeraldRobert {
 				IntegerVariable u3 = Choco.makeIntVar("u3", 0, 1, new String[]{Options.V_ENUM});
 				IntegerVariable u4 = Choco.makeIntVar("u4", 0, 1, new String[]{Options.V_ENUM});
 				IntegerVariable u5 = Choco.makeIntVar("u5", 0, 1, new String[]{Options.V_ENUM});
-				
-
+			
 				// DIFFERENT: Add constraint by letter
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(d, d), u0), Choco.plus(t, Choco.mult(u1, 10))));
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(l, l), u1), Choco.plus(r, Choco.mult(u2, 10))));

@@ -58,7 +58,7 @@ public class Main {
 		emitter.setTemplateLib(templates);
 		SymbolraetselEmitter.riddle_return puzzle_return = emitter.riddle();
 		String output = puzzle_return.getTemplate().toString();
-		System.out.println("\n\nausgabe");
+		System.out.println("\n\nAusgabe:\n");
 		System.out.println(output);
 
 

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 }
 
 @members {
-Set<Character> symbols = new HashSet<Character>();
+List<Character> symbols = new ArrayList<Character>();  
 }
 
 riddle

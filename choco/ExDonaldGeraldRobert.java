@@ -39,6 +39,9 @@ public class ExDonaldGeraldRobert {
 				IntegerVariable u3 = Choco.makeIntVar("u3", 0, 1, new String[]{Options.V_ENUM});
 				IntegerVariable u4 = Choco.makeIntVar("u4", 0, 1, new String[]{Options.V_ENUM});
 				IntegerVariable u5 = Choco.makeIntVar("u5", 0, 1, new String[]{Options.V_ENUM});
+				
+				HashMap<Integer,IntegerVariable> uebertraege = new HashMap<Integer,IntegerVariable>();
+				
 			
 				// DIFFERENT: Add constraint by letter
 				model.addConstraint(Choco.eq(Choco.plus(Choco.plus(d, d), u0), Choco.plus(t, Choco.mult(u1, 10))));

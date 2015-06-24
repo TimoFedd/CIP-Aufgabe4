@@ -26,7 +26,6 @@ public class PuzzleSolver {
 
 
     HashMap\<Integer,IntegerVariable\> uebertraege = new HashMap\<Integer,IntegerVariable\>();
-    uebertraege.put(0,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));
     int i = 0;
     
     <sums; separator="\n">
@@ -46,7 +45,7 @@ public class PuzzleSolver {
 
 
 sum(number1, number2, number3) ::= <<
-
+uebertraege.put(i,Choco.constant(0));
 <number1.Characters, number2.Characters, number3.Characters :
   {n1, n2, n3 |
 uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  

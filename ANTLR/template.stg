@@ -33,7 +33,11 @@ public class PuzzleSolver {
 
     Solver s = new CPSolver();
     s.read(model);
-    s.solve();
+     if(s.solve()){
+    	System.out.println("The problem has a solution:\n");
+    }else{
+    	System.out.println("The Problem has no solution:\n");
+    }
 
     <symbols:{symbol| System.out.println("<symbol> = " + s.getVar(<symbol>).getVal()); }; separator="\n">
   }
@@ -47,7 +51,7 @@ sum(number1, number2, number3) ::= <<
 uebertraege.put(i,Choco.constant(0));
 <number1.Characters, number2.Characters, number3.Characters :
   {n1, n2, n3 |
-uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
 model.addConstraint(Choco.eq(Choco.plus(Choco.plus(<if(n1)><n1><else>ZERO<endif>, <if(n2)><n2><else>ZERO<endif>), uebertraege.get(i)), Choco.plus(<if(n3)><n3><else>ZERO<endif>, Choco.mult( uebertraege.get(i+1),10))));
 i++;};separator="\n">
 

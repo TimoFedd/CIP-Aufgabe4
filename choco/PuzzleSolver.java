@@ -36,19 +36,19 @@ public class PuzzleSolver {
     
     uebertraege.put(i,Choco.constant(0));
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(B, G), uebertraege.get(i)), Choco.plus(H, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, D), uebertraege.get(i)), Choco.plus(H, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, D), uebertraege.get(i)), Choco.plus(J, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, C), uebertraege.get(i)), Choco.plus(H, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
@@ -56,19 +56,19 @@ public class PuzzleSolver {
 
     uebertraege.put(i,Choco.constant(0));
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(H, B), uebertraege.get(i)), Choco.plus(G, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(J, L), uebertraege.get(i)), Choco.plus(J, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, H), uebertraege.get(i)), Choco.plus(G, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(ZERO, G), uebertraege.get(i)), Choco.plus(C, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
@@ -76,19 +76,19 @@ public class PuzzleSolver {
 
     uebertraege.put(i,Choco.constant(0));
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, H), uebertraege.get(i)), Choco.plus(J, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, C), uebertraege.get(i)), Choco.plus(D, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(L, A), uebertraege.get(i)), Choco.plus(L, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, F), uebertraege.get(i)), Choco.plus(K, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
@@ -96,19 +96,19 @@ public class PuzzleSolver {
 
     uebertraege.put(i,Choco.constant(0));
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(B, H), uebertraege.get(i)), Choco.plus(G, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, J), uebertraege.get(i)), Choco.plus(G, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, F), uebertraege.get(i)), Choco.plus(L, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(F, ZERO), uebertraege.get(i)), Choco.plus(F, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
@@ -116,19 +116,19 @@ public class PuzzleSolver {
 
     uebertraege.put(i,Choco.constant(0));
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(G, B), uebertraege.get(i)), Choco.plus(H, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, L), uebertraege.get(i)), Choco.plus(C, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(D, H), uebertraege.get(i)), Choco.plus(A, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(C, G), uebertraege.get(i)), Choco.plus(F, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
@@ -136,19 +136,19 @@ public class PuzzleSolver {
 
     uebertraege.put(i,Choco.constant(0));
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(H, G), uebertraege.get(i)), Choco.plus(J, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(H, J), uebertraege.get(i)), Choco.plus(D, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(J, G), uebertraege.get(i)), Choco.plus(L, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
-    uebertraege.put(i+1,Choco.makeIntVar("u1", 0, 1, new String[]{Options.V_ENUM}));  
+    uebertraege.put(i+1,Choco.makeIntVar("u"+i+1, 0, 1, new String[]{Options.V_ENUM}));  
     model.addConstraint(Choco.eq(Choco.plus(Choco.plus(H, C), uebertraege.get(i)), Choco.plus(K, Choco.mult( uebertraege.get(i+1),10))));
     i++;
 
@@ -159,7 +159,11 @@ public class PuzzleSolver {
 
     Solver s = new CPSolver();
     s.read(model);
-    s.solve();
+     if(s.solve()){
+    	System.out.println("The problem has a solution:\n");
+    }else{
+    	System.out.println("The Problem has no solution:\n");
+    }
 
     System.out.println("A = " + s.getVar(A).getVal()); 
     System.out.println("B = " + s.getVar(B).getVal()); 

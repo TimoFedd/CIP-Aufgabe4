@@ -1,6 +1,7 @@
 group template;
 
 sums(symbols,sums) ::= <<
+package de.haw.cip;
 import java.util.HashMap;
 import choco.Choco;
 import choco.Options;
@@ -10,7 +11,7 @@ import choco.kernel.model.Model;
 import choco.kernel.model.variables.integer.IntegerVariable;
 import choco.kernel.solver.Solver;
 
-public class PuzzleSolver {
+public class Solution  {
 
   private static final IntegerVariable ZERO = Choco.constant(0);
 

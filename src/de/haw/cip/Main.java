@@ -1,7 +1,10 @@
 package de.haw.cip;
 
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -61,8 +64,18 @@ public class Main {
 		System.out.println("\n\nAusgabe:\n");
 		System.out.println(output);
 
-
-
+		//Java Datei erzeugen
+		FileWriter writer;
+		File file = new File("src/de/haw/cip/Solution.java");
+		
+		writer = new FileWriter(file);
+		writer.write(output);
+		writer.flush();
+		writer.close();
+		
+		
 	}
+	
+	
 
 }

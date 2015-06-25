@@ -1,6 +1,5 @@
 package de.haw.cip;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,6 +7,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -73,6 +74,14 @@ public class Main {
 		writer.flush();
 		writer.close();
 		
+		//Solution.java compilieren
+		String[] args1 = new String[] {"-d", System.getProperty("user.dir"),"src/de/haw/cip/Solution.java"};
+		com.sun.tools.javac.Main.compile(args1);
+		
+		//Ausführen des Rätsels
+		//PS: Wenn man z.b. den Rätsel Input ändert, muss man in Eclipse das Project einmal mit F5 Aktualisieren, da Eclipse sonst das alte Rätsel verwendet.
+		Solution.main(args1);
+	
 		
 	}
 	
